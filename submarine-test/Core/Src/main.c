@@ -117,17 +117,17 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     
-    // PB0과 PB1 모두 확실히 끄기
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET); // PB0 강제 OFF
+    // Turn off both PB0 and PB1 pins completely
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET); // Force PB0 OFF
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET); // PB1 OFF
     
-    // PB1 단일 핀만 테스트
+    // Test only PB1 pin
     printf("Counter: %lu - PB1 turning ON\r\n", counter++);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);   // PB1 켜기
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);   // Turn on PB1
     HAL_Delay(1000);
     
     printf("Counter: %lu - PB1 turning OFF\r\n", counter++);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET); // PB1 끄기
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET); // Turn off PB1
     HAL_Delay(1000);
     
     printf("Counter: %lu - All pins OFF for 1 second\r\n", counter++);
